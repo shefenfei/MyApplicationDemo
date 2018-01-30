@@ -1,0 +1,3 @@
+include ':app', ':daggerdemo' , ':aspectjlib'
+//,':camera'
+//, ':camera', ':petshome'
