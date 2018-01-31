@@ -1,11 +1,11 @@
 package com.fenfei.daggerdemo.business.books.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.fenfei.daggerdemo.R;
+import com.fenfei.daggerdemo.base.BaseActivity;
 
-public class BookActivity extends AppCompatActivity {
+public class BookActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

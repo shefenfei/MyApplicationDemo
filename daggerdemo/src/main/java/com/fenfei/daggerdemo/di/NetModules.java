@@ -22,12 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class NetModules {
 
-    String mBaseUrl;
-
-    public NetModules(String baseUrl) {
-        mBaseUrl = baseUrl;
-    }
-
     @Provides
     @Singleton
     SharedPreferences providesSharedPreferences(Application application) {
@@ -57,7 +51,7 @@ public class NetModules {
     Retrofit providesRetrofit(Gson gson , OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(mBaseUrl)
+                .baseUrl("http://www.baidu.com")
                 .client(okHttpClient)
                 .build();
     }

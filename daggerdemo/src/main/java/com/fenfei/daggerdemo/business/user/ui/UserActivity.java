@@ -4,19 +4,17 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.fenfei.daggerdemo.R;
 import com.fenfei.daggerdemo.api.DaggerApiService;
+import com.fenfei.daggerdemo.base.BaseActivity;
 import com.fenfei.daggerdemo.business.books.ui.BookActivity;
 import com.fenfei.daggerdemo.business.user.beans.User;
 import com.fenfei.daggerdemo.business.user.service.UserService;
 import com.fenfei.daggerdemo.business.user.viewmodules.UserViewModel;
-import com.fenfei.daggerdemo.database.AppDataBase;
-import com.fenfei.daggerdemo.database.UserDAO;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -25,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends BaseActivity {
 
     private String TAG = "UserActivity";
 
@@ -39,8 +37,8 @@ public class UserActivity extends AppCompatActivity {
     @Inject
     DaggerApiService mApiService;
 
-    @Inject
-    AppDataBase mAppDataBase;
+//    @Inject
+//    AppDataBase mAppDataBase;
 
     private UserViewModel mUserViewModel;
     private MutableLiveData<String> mData;
@@ -62,9 +60,6 @@ public class UserActivity extends AppCompatActivity {
         String gson = mGson.toJson(user);
         Log.e(TAG, "onCreate: " + gson );
 
-//        DaggerActivity
-//        DaggerFragment
-
         mApiService.getUserInfo("uid")
                 .enqueue(new Callback<String>() {
                     @Override
@@ -79,14 +74,14 @@ public class UserActivity extends AppCompatActivity {
                 });
 
 
-        UserDAO userDAO = mAppDataBase.getUserDAO();
+//        UserDAO userDAO = mAppDataBase.getUserDAO();
         new Thread(()-> {
-            userDAO.addUser(user);
+//            userDAO.addUser(user);
         }).start();
 
-        userDAO.userList().observe(this , users -> {
-            Log.e(TAG, "onCreate:从数据库读取" + users );
-        });
+//        userDAO.userList().observe(this , users -> {
+//            Log.e(TAG, "onCreate:从数据库读取" + users );
+//        });
 
 
         mContent = findViewById(R.id.viewmodel_content);
@@ -96,16 +91,6 @@ public class UserActivity extends AppCompatActivity {
             startActivity(new Intent(UserActivity.this , BookActivity.class));
         });
 
-        /*
-        mUserViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
-        mData = mUserViewModel.getData();
-        mData.observe(this , datas -> {
-            Log.e(TAG, "onCreate: " + datas );
-            mContent.setText(datas);
-        });
-
-        mUserService.testUserService();
-        */
     }
 
 }

@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
         </activity>
         <activity android:name=".business.user.ui.UserActivity">
             <intent-filter>
@@ -22,8 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".business.books.ui.BookActivity">
+        <activity android:name=".base.BaseActivity">
         </activity>
+        <activity android:name=".business.books.ui.BookActivity"/>
     </application>
 
 </manifest>

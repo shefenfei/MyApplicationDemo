@@ -12,21 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fenfei.daggerdemo.R;
-import com.fenfei.daggerdemo.database.AppDataBase;
+import com.fenfei.daggerdemo.base.BaseFragment;
+import com.fenfei.daggerdemo.business.user.beans.User;
+import com.google.gson.Gson;
 
 import javax.inject.Inject;
-
-import dagger.android.support.AndroidSupportInjection;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BookFragment extends Fragment implements LifecycleOwner {
+public class BookFragment extends BaseFragment implements LifecycleOwner {
 
     String TAG = "BookFragment";
 
     @Inject
-    AppDataBase mAppDataBase;
+    Gson mGson;
 
     public BookFragment() {
         // Required empty public constructor
@@ -35,7 +35,6 @@ public class BookFragment extends Fragment implements LifecycleOwner {
 
     @Override
     public void onAttach(Context context) {
-        AndroidSupportInjection.inject(this);
         super.onAttach(context);
     }
 
@@ -50,9 +49,11 @@ public class BookFragment extends Fragment implements LifecycleOwner {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        User user = new User();
+        user.setUsername("shefenfei");
+        user.setPassword("123456");
 
-        mAppDataBase.getUserDAO().userList().observe(this , users -> {
-            Log.e(TAG, "onActivityCreated: 来自 fragment" + users);
-        });
+        String gson = mGson.toJson(user);
+        Log.e(TAG, "来自fragment 注入: " + gson );
     }
 }

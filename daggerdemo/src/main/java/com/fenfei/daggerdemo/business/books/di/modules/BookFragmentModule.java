@@ -1,9 +1,11 @@
 package com.fenfei.daggerdemo.business.books.di.modules;
 
+import dagger.Module;
+
 /**
- * Created by shefenfei on 2018/1/30.
+ * Created by shefenfei on 2018/1/31.
  */
-//@Module
+@Module
 public class BookFragmentModule {
 
 }
