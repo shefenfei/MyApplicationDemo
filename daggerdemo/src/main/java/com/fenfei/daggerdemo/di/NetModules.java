@@ -1,9 +1,12 @@
 package com.fenfei.daggerdemo.di;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.fenfei.daggerdemo.api.DaggerApiService;
+import com.fenfei.daggerdemo.database.AppDataBase;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -21,6 +24,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 @Module
 public class NetModules {
+
+    @Provides
+    @Singleton
+    AppDataBase providesAppDataBase(Application application) {
+        return Room.databaseBuilder(
+                application.getApplicationContext(),
+                AppDataBase.class,
+                "dagger_db")
+                .build();
+    }
+
 
     @Provides
     @Singleton
@@ -55,5 +69,12 @@ public class NetModules {
                 .client(okHttpClient)
                 .build();
     }
+
+    @Provides
+    @Singleton
+    public DaggerApiService providesDaggerApiService(Retrofit retrofit) {
+        return retrofit.create(DaggerApiService.class);
+    }
+
 
 }

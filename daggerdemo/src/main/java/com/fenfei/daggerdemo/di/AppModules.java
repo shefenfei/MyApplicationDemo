@@ -12,7 +12,7 @@ import dagger.Module;
  * 其中有一个很重要的细节，我们必须将子 Component 加入到 AppModule 中，
  * 这样 Dagger 图谱才能识别
  */
-@Module(includes = NetModules.class)
+@Module(includes = {NetModules.class , ViewModelModules.class})
 public abstract class AppModules {
 
     @Binds

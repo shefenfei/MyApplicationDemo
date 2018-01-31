@@ -20,7 +20,7 @@ public abstract class ActivityBuildersModule {
      * @return
      */
     @ActivityScoped
-    @ContributesAndroidInjector(modules = UserModule.class)
+    @ContributesAndroidInjector(modules = {UserModule.class})
     abstract UserActivity bindUserActivity();
 
     /**
