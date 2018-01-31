@@ -3,9 +3,13 @@ package com.fenfei.daggerdemo.repos;
 import android.annotation.TargetApi;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.fenfei.daggerdemo.api.DaggerApiService;
+import com.fenfei.daggerdemo.api.NetworkBoundResource;
+import com.fenfei.daggerdemo.api.Resource;
 import com.fenfei.daggerdemo.business.user.beans.User;
 import com.fenfei.daggerdemo.database.AppDataBase;
 
@@ -78,5 +82,49 @@ public class UserRepository {
                 Log.e(TAG, "onFailure: " + t.getMessage() );
             }
         });
+    }
+
+
+    public void userLogin() {
+        mDaggerApiService.userLogin().enqueue(new Callback<Resource<User>>() {
+            @Override
+            public void onResponse(Call<Resource<User>> call, Response<Resource<User>> response) {
+                User data = response.body().data;
+            }
+
+            @Override
+            public void onFailure(Call<Resource<User>> call, Throwable t) {
+
+            }
+        });
+    }
+
+
+    public void testNetBoundResource() {
+        new NetworkBoundResource<User , User>(){
+
+            @Override
+            protected void saveCallResult(@NonNull User item) {
+
+            }
+
+            @Override
+            protected boolean shouldFetch(@Nullable User data) {
+                return false;
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<User> loadFromDb() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<Resource<User>> createCall() {
+                return null;
+            }
+
+        }.getAsLiveData();
     }
 }

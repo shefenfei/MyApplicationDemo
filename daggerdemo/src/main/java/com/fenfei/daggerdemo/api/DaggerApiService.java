@@ -18,4 +18,7 @@ public interface DaggerApiService {
 
     @GET("/user/getAllUser")
     Call<List<User>> getAllUsers();
+
+    @GET("/user/login")
+    Call<Resource<User>> userLogin();
 }

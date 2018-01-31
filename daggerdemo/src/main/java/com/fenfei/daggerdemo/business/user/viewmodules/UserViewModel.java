@@ -64,5 +64,9 @@ public class UserViewModel extends ViewModel {
     }
 
 
-
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        Log.e(TAG, "onCleared: ");
+    }
 }
