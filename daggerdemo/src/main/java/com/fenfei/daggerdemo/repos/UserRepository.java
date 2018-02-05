@@ -11,7 +11,7 @@ import com.fenfei.daggerdemo.api.DaggerApiService;
 import com.fenfei.daggerdemo.api.NetworkBoundResource;
 import com.fenfei.daggerdemo.api.Resource;
 import com.fenfei.daggerdemo.business.user.beans.User;
-import com.fenfei.daggerdemo.database.AppDataBase;
+import com.fenfei.daggerdemo.database.UserDAO;
 
 import java.util.List;
 import java.util.Objects;
@@ -31,12 +31,12 @@ import retrofit2.Response;
 public class UserRepository {
 
     private DaggerApiService mDaggerApiService;
-    private AppDataBase mAppDataBase;
+    private UserDAO mUserDAO;
 
     @Inject
-    public UserRepository(DaggerApiService daggerApiService, AppDataBase appDataBase) {
+    public UserRepository(DaggerApiService daggerApiService, UserDAO userDAO) {
         mDaggerApiService = daggerApiService;
-        mAppDataBase = appDataBase;
+        mUserDAO = userDAO;
     }
 
     @TargetApi(24)
@@ -48,7 +48,7 @@ public class UserRepository {
         }
 
         MutableLiveData<List<User>> mutableLiveData = new MutableLiveData<>();
-        LiveData<List<User>> users =  mAppDataBase.getUserDAO().userList();
+        LiveData<List<User>> users =  mUserDAO.userList();
 
         if (users != null) {
             return users;
