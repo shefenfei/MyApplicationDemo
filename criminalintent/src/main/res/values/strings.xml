@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CriminalIntent</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="crime_string_title">请输入...</string>
+    <string name="crime_title_label">标题</string>
+    <string name="crime_details_label">详情</string>
+    <string name="crime_solved_label">解决</string>
+    <string name="date_picker_title">日期</string>
+    <string name="show_subtitle">如果有位置就显示</string>
+</resources>

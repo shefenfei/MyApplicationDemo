@@ -7,8 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.DrawableTypeRequest;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
+import com.fenfei.daggerdemo.AppConfig;
+import com.fenfei.daggerdemo.BuildConfig;
 import com.fenfei.daggerdemo.R;
 import com.fenfei.daggerdemo.base.BaseActivity;
 import com.fenfei.daggerdemo.business.books.ui.BookActivity;
@@ -50,6 +56,16 @@ public class UserActivity extends BaseActivity {
         mUserViewModel.fetchUsers().observe(this , users -> {
             Log.e(TAG, "onCreate: " + users );
         });
+
+        if (AppConfig.DEBUG) {
+            Log.e(TAG, "onCreate: "  + BuildConfig.DEBUG);
+        }
+
+        RequestManager requestManager = Glide.with(this);
+        DrawableTypeRequest<String> requestBuilder;
+        requestBuilder = requestManager.load("");
+        requestBuilder.into(new ImageView(this));
+
     }
 
     private void initView() {
@@ -61,4 +77,11 @@ public class UserActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("key1" , 1);
+        outState.putInt("key2" , 2);
+        Log.e(TAG, "onSaveInstanceState: ");
+    }
 }

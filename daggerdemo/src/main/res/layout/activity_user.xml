@@ -7,16 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".business.user.ui.UserActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:id="@+id/click_get"
-        android:text="获取viewmodel信息"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/viewmodel_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/click_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取viewmodel信息"/>
 
+        <TextView
+            android:id="@+id/viewmodel_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.fenfei.daggerdemo.views.MyView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff0000"
+            android:text="hahhahahahhaha"/>
+
+        <com.fenfei.daggerdemo.views.MyView
+            android:layout_marginTop="10dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#ff0000"
+            android:text="hahhahahahhaha"/>
+        
+        <com.fenfei.daggerdemo.views.MyCycleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.fenfei.daggerdemo.views.MyViewGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rightTitle="哈哈哈右边"
+            app:centerTitle="中间"
+            app:leftIcon="@drawable/ic_launcher_background">
+
+        </com.fenfei.daggerdemo.views.MyViewGroup>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

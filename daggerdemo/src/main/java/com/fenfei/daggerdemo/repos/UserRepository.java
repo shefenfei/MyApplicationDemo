@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.fenfei.daggerdemo.api.DaggerApiService;
+import com.fenfei.daggerdemo.api.HostSelectionInterceptor;
 import com.fenfei.daggerdemo.api.NetworkBoundResource;
 import com.fenfei.daggerdemo.api.Resource;
 import com.fenfei.daggerdemo.business.user.beans.User;
@@ -32,9 +33,11 @@ public class UserRepository {
 
     private DaggerApiService mDaggerApiService;
     private UserDAO mUserDAO;
+    private HostSelectionInterceptor mHostSelectionInterceptor;
 
     @Inject
-    public UserRepository(DaggerApiService daggerApiService, UserDAO userDAO) {
+    public UserRepository(DaggerApiService daggerApiService,
+                          UserDAO userDAO) {
         mDaggerApiService = daggerApiService;
         mUserDAO = userDAO;
     }
@@ -70,6 +73,7 @@ public class UserRepository {
 
 
     public void getUserInfo(String uid) {
+//        mHostSelectionInterceptor.setHost("http://www.sina.com");
         String TAG = "UserRepository";
         mDaggerApiService.getUserInfo(uid).enqueue(new Callback<String>() {
             @Override

@@ -1,3 +1,8 @@
-include ':app', ':daggerdemo' , ':aspectjlib'
-//,':camera'
+include ':app',
+//        ':daggerdemo',
+//        ':dynamticbuild',
+//        ':geoquiz',
+        ':criminalintent' ,
+        ':aspectjlib'
+//        ':camera'
 //, ':camera', ':petshome'

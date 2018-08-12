@@ -22,18 +22,20 @@
                 android:resource="@xml/provider_paths"/>
         </provider>
 
-        <activity android:name=".kotlins.KotilnActivity">
+        <activity android:name=".kotlins.ui.KotilnActivity">
         </activity>
-        <activity android:name=".kotlins.ListViewActivity">
+        <activity android:name=".kotlins.ui.ListViewActivity">
         </activity>
-        <activity android:name=".kotlins.RecyclerTestActivity">
+        <activity android:name=".kotlins.ui.RecyclerTestActivity">
         </activity>
-        <activity android:name=".kotlins.CoustomViewActivity">
+        <activity android:name=".kotlins.ui.CoustomViewActivity">
         </activity>
-        <activity android:name=".kotlins.RxJava2Activity">
+        <activity android:name=".kotlins.ui.RxJava2Activity">
+        </activity>
+        <activity android:name=".kotlins.ui.CustomViewActivity">
 
         </activity>
-        <activity android:name=".kotlins.CustomViewActivity">
+        <activity android:name=".kotlins.kotlins_day01.Day01Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

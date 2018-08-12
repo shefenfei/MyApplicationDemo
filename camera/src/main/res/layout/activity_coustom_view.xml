@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.fenfei.camera.kotlins.CoustomViewActivity">
+    tools:context="com.fenfei.camera.kotlins.ui.CoustomViewActivity">
 
     <com.fenfei.camera.kotlins.views.MyTextView
         android:layout_width="200dp"

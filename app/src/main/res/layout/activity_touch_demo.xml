@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fenfei.myapplicationdemo.ui.TouchDemoActivity">
+
+    <!--
+
+    <com.fenfei.myapplicationdemo.views.ViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.fenfei.myapplicationdemo.views.ViewGroupB
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+
+            <com.fenfei.myapplicationdemo.views.MyView
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+        </com.fenfei.myapplicationdemo.views.ViewGroupB>
+    </com.fenfei.myapplicationdemo.views.ViewGroupA>
+
+   -->
+
+    <ListView
+        android:id="@+id/listview"
+        android:divider="@drawable/ic_launcher_background"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:listSelector="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/empty_view"
+        android:text="暂无数据"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
+
+</android.support.constraint.ConstraintLayout>
