@@ -14,6 +14,7 @@ public class MainActivity extends SimpleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
+        //加入了新的代码
         UUID uuid = (UUID) getIntent().getSerializableExtra(EXTRA_CRIME_ID);
         return CrimeFragment.newInstance(uuid);
     }
