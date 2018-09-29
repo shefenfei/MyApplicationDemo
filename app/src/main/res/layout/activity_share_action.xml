@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_share_action"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fenfei.myapplicationdemo.ui.ShareActionActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/share"
+        android:text="shareAction"
+        android:layout_height="wrap_content"/>
+
+    <com.fenfei.myapplicationdemo.views.CustomViewgroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="hahahha"
+            android:gravity="center"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:text="my View"
+            android:layout_height="50dp"/>
+
+    </com.fenfei.myapplicationdemo.views.CustomViewgroup>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fragment_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fenfei.myapplicationdemo.ui.FragmentTestActivity">
+
+    <fragment
+        class="com.fenfei.myapplicationdemo.fragments.AFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/fragment_a"
+        tools:layout="@layout/fragment_a"/>
+
+    <fragment
+        android:layout_width="match_parent"
+        class="com.fenfei.myapplicationdemo.fragments.BFragment"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_b"/>
+
+</LinearLayout>

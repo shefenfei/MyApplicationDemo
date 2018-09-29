@@ -11,6 +11,8 @@ public class CrimeListActivity extends SimpleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
+        int x = 0b101010;
+        long phone = 130_4069_1917L;
         mFragment = new CrimeListFragment();
         return mFragment;
     }

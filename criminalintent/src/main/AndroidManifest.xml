@@ -12,13 +12,16 @@
         <activity android:name=".ui.MainActivity">
         </activity>
         <activity android:name=".ui.CrimeListActivity">
+
+        </activity>
+        <activity android:name=".ui.CrimePagerActivity">
+        </activity>
+        <activity android:name=".ui.ExoPlayerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".ui.CrimePagerActivity">
         </activity>
     </application>
 

@@ -1,0 +1,16 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutId="compose">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.myapplication.ComposeActivity"
+            android:targetPackage="com.example.myapplication"/>
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list is what the user sees when they
+             launch this shortcut. -->
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <!-- Specify more shortcuts here. -->
+</shortcuts>

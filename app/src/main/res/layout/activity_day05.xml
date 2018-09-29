@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fenfei.myapplicationdemo.studemo.day05.Day05Activity">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        class="com.fenfei.myapplicationdemo.fragments.NewsDetailFragment"
+        android:id="@+id/detail_fragemnt"
+        android:layout_weight="2"/>
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        class="com.fenfei.myapplicationdemo.fragments.NewsListFragment"
+        android:id="@+id/list_fragment"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

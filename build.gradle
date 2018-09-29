@@ -10,14 +10,16 @@ buildscript {
     ext.rxjava2_android_version = "2.0.1"
 
     repositories {
+        maven {
+//            url 'https://maven.google.com'
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+
+        }
+
         jcenter()
         mavenCentral()
         google()
-        /*
-        maven {
-            url 'https://maven.google.com'
-        }
-        */
+
 
     }
 
@@ -39,11 +41,13 @@ buildscript {
 
 allprojects {
     repositories {
+//        maven {
+//            url 'http://maven.google.com'
+//            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+//        }
         jcenter()
         google()
-        maven {
-            url 'http://maven.google.com'
-        }
+
     }
 }
 
